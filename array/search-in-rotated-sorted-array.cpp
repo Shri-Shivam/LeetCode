@@ -1,8 +1,8 @@
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
-        if(nums.size()==0)
-        {
+
+        if (nums.size() == 0) {
             return -1;
         }
         int low = 0;
@@ -18,10 +18,12 @@ public:
                     low = mid + 1;
                 }
             } else {
-                if (target > nums[mid] && target < nums[high]) {
+                if (target > nums[mid] && target <=nums[high]) {
                     low = mid + 1;
                 }
-                high = mid - 1;
+                else{
+                 high = mid - 1;
+                }
             }
         }
         return -1;
